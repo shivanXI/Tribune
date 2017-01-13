@@ -1,17 +1,22 @@
 package project.com.tribune;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseDatabase=FirebaseDatabase.getInstance();
         mFirebaseAuth=FirebaseAuth.getInstance();
 
+        mDatabaseReference=mFirebaseDatabase.getReference().child("data");
+
+        mFirebaseAuth=FirebaseAuth.getInstance();
+
         mAuthStateListener=new FirebaseAuth.AuthStateListener()     //initialization of mAuthStateListener.
         {
             @Override
@@ -51,8 +60,9 @@ public class MainActivity extends AppCompatActivity {
                                     .createSignInIntentBuilder()
                                     .setIsSmartLockEnabled(false)
                                     .setProviders(
-                                            AuthUI.GOOGLE_PROVIDER,
-                                            AuthUI.FACEBOOK_PROVIDER
+                                            AuthUI.EMAIL_PROVIDER,
+                                            AuthUI.GOOGLE_PROVIDER
+                                            //AuthUI.FACEBOOK_PROVIDER
                                     )
                                     .build(),
                             RC_SIGN_IN);
@@ -78,4 +88,20 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode,resultCode,data);
+        if(requestCode==RC_SIGN_IN)
+            if(resultCode==RESULT_OK)
+                Toast.makeText(getApplicationContext(),"signing in...",Toast.LENGTH_SHORT).show();
+            else if(resultCode==RESULT_CANCELED)
+            {
+                Toast.makeText(getApplicationContext(),"exiting...",Toast.LENGTH_SHORT).show();
+                finish();
+            }
+    }
+
+
 }
