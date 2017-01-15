@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "335253660062-927f3m929iejr14k14e4ks18d56ntvdg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "project.com.tribune",
+            "certificate_hash": "9340678A3A13B104C3C5443FBA618BE7FD1B4C68"
+          }
+        },
+        {
           "client_id": "335253660062-0igap04aesg9i22gih4ju9fo2hu5qk68.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335253660062-0igap04aesg9i22gih4ju9fo2hu5qk68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
