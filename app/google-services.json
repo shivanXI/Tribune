@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1078089020866",
+    "project_id": "tribune-85142"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078089020866:android:d79e7cd1e190e572",
+        "android_client_info": {
+          "package_name": "p2_vaio.signin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078089020866-ah6shmh7e6ms5cg0cd2pbavf5372oc04.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1078089020866-soima7seapucg1frus334uollj1f5c2k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "p2_vaio.signin",
+            "certificate_hash": "4b2bfd7a72f8d7edd8a24799ca9618cf2ff07ef1"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvnDp0fHsjgam8FpR_WRb3H7WsRXL3uqM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
