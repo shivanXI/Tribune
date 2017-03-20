@@ -19,6 +19,8 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.facebook.login.LoginManager;
 import com.firebase.ui.auth.AuthUI;
 
 
@@ -362,13 +364,9 @@ public class ProfileActivity extends AppCompatActivity implements GoogleApiClien
         }
 
         if (id == R.id.sign_out_menu) {
-
-            //AuthUI.getInstance().signOut(this);
+            LoginManager.getInstance().logOut();
             firebaseAuth.signOut();
-            /*finish();
-            startActivity(new Intent(this , MainActivity.class));*/
-           // startActivity(new Intent(ProfileActivity.this , MainActivity.class));
-           // finish();
+
 
             return true;
         }

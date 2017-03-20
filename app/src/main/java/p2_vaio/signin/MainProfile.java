@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -84,6 +85,7 @@ public class MainProfile extends AppCompatActivity  {
 
 
             firebaseauth.signOut();
+            LoginManager.getInstance().logOut();
             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         }
         return super.onOptionsItemSelected(item);
